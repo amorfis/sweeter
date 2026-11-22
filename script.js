@@ -88,7 +88,6 @@ const EN = {
   "col.sweaters": "Sweaters",
   "col.cardigans": "Cardigans",
   "col.note": "Some sweaters are <strong>ready to ship</strong> — see the “Od ręki” highlight on Instagram.",
-  "quote.text": "I believe it’s worth owning less, but choosing consciously. Softness, noble fibres and&nbsp;timeless shapes never go out of&nbsp;style.",
   "mat.kicker": "materials",
   "mat.title": "Only <em>noble</em> fibres",
   "mat.lead": "I work only with high-quality natural yarns, creating in the spirit of slow fashion – with respect for time, nature, material and people.",
