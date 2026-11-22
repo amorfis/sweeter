@@ -13,7 +13,7 @@ const POST = id => `https://www.instagram.com/sweeter_nataliatabaczka/p/${id}/`;
 // ---- Collection gallery -------------------------------------------------------
 // images/gallery/NN.jpg (large) + images/gallery/thumb/NN.jpg (grid).
 // Shown in a fresh random order on every page load.
-const GALLERY_COUNT = 46;
+const GALLERY_COUNT = 47;
 const GALLERY = Array.from({ length: GALLERY_COUNT }, (_, i) => String(i + 1).padStart(2, "0") + ".jpg");
 for (let i = GALLERY.length - 1; i > 0; i--) {
   const j = Math.floor(Math.random() * (i + 1));
