@@ -22,13 +22,11 @@ const PIECES = [
     name:   { pl: "Sweter w liście", en: "Leaf-lace sweater" },
     colour: { pl: "nasycona czerwień", en: "rich red" },
     fibre:  { pl: "kaszmir i merino", en: "cashmere & merino" },
-    note:   { pl: "„Chyba najpiękniejszy sweter, który stworzyłam!”", en: "“Perhaps the most beautiful sweater I’ve ever made.”" },
-    badge:  { pl: "często zamawiany", en: "often ordered" } },
+    note:   { pl: "„Chyba najpiękniejszy sweter, który stworzyłam!”", en: "“Perhaps the most beautiful sweater I’ve ever made.”" } },
   { img: "powder-blue-leaf.jpg", post: "DfmR93xiBTS", kind: "sweater",
     name:   { pl: "Sweter w liście", en: "Leaf-lace sweater" },
     colour: { pl: "poranna mgła", en: "morning mist" },
-    note:   { pl: "Wasz ulubieniec — tym razem w kolorze porannej mgły.", en: "Your favourite — this time in the colour of morning mist." },
-    badge:  { pl: "Wasz ulubieniec", en: "your favourite" } },
+    note:   { pl: "Wasz ulubieniec — tym razem w kolorze porannej mgły.", en: "Your favourite — this time in the colour of morning mist." } },
   { img: "black-bobble-cardigan.jpg", post: "Df1u-IDiAhf", kind: "cardigan",
     name:   { pl: "Bąbelek — kardigan", en: "Bąbelek cardigan" },
     colour: { pl: "czerń", en: "black" },
@@ -48,8 +46,7 @@ const PIECES = [
     name:   { pl: "Kardigan — nowy wzór", en: "Cardigan — new design" },
     colour: { pl: "taupe", en: "taupe" },
     fibre:  { pl: "kid moher i jedwab", en: "kid mohair & silk" },
-    note:   { pl: "Lekki, delikatny i otulający — idealny na jesień.", en: "Light, delicate and enveloping — made for autumn." },
-    badge:  { pl: "nowość", en: "new" } },
+    note:   { pl: "Lekki, delikatny i otulający — idealny na jesień.", en: "Light, delicate and enveloping — made for autumn." } },
   { img: "charcoal-vneck.jpg", post: "Df9heeUCPhM", kind: "sweater",
     name:   { pl: "Sweter w liście, dekolt V", en: "Leaf-lace V-neck" },
     colour: { pl: "grafit", en: "graphite" },
@@ -143,7 +140,6 @@ function renderGallery() {
     <article class="piece reveal is-in ${filter !== "all" && p.kind !== filter ? "is-hidden" : ""}" data-i="${i}" tabindex="0" role="button"
              aria-label="${p.name[lang]} — ${p.colour[lang]}">
       <div class="piece__img" data-view="${UI[lang].view}">
-        ${p.badge ? `<span class="piece__badge">${p.badge[lang]}</span>` : ""}
         <img src="images/${p.img}" alt="${p.name[lang]}, ${p.colour[lang]}" loading="lazy" width="512" height="640">
       </div>
       <div class="piece__info">
