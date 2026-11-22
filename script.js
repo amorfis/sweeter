@@ -91,7 +91,7 @@ const EN = {
   "quote.text": "I believe it’s worth owning less, but choosing consciously. Softness, noble fibres and&nbsp;timeless shapes never go out of&nbsp;style.",
   "mat.kicker": "materials",
   "mat.title": "Only <em>noble</em> fibres",
-  "mat.lead": "I never compromise on yarn. I work only with the finest natural fibres — they decide how a sweater wears for years to come.",
+  "mat.lead": "I work only with high-quality natural yarns, creating in the spirit of slow fashion – with respect for time, nature, material and people.",
   "mat.f1.t": "Cashmere &amp; extra-fine merino",
   "mat.f1.d": "Merino just 17 microns thin, enriched with cashmere. Unrivalled softness — ideal for sensitive skin.",
   "mat.f2.t": "Kid mohair &amp; silk",
