@@ -112,6 +112,7 @@ const EN = {
   "about.title": "Hi, I’m <em>Natalia</em>",
   "about.p1": "I’ve been knitting since I was eight — a passion that has been with me since childhood and, over time, became my way of life.",
   "about.p2": "Today I run my own business, knitting sweaters to order. It’s my only source of income, but also a source of immense joy and satisfaction.",
+  "about.p3": "I love what I do!<br>I believe that in every stitch you can feel the warmth of hands and the passion that turns ordinary yarn into something truly special.",
   "ig.kicker": "instagram",
   "ig.lead": "New designs, sweaters on their way to clients, and reviews — in the “Opinie” highlights.",
   "ct.kicker": "questions / orders",
