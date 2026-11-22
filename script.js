@@ -83,7 +83,7 @@ const EN = {
   "facts.shipping": "shipping to every<br>corner of the world",
   "col.kicker": "collection",
   "col.title": "Sweaters that <em>embrace</em>",
-  "col.lead": "I tailor every sweater individually — the design, type of yarn, colour and size.",
+  "col.lead": "Every sweater that leaves my hands is unique and made with one particular person in mind. I choose the cut, colour, finish, type of yarn and size so that it fits its owner perfectly.<br>I do everything myself — from the first stitch to the last seam — so the wait can sometimes be longer, but in return everyone receives something truly special. Made with heart.",
   "col.all": "All",
   "col.sweaters": "Sweaters",
   "col.cardigans": "Cardigans",
