@@ -83,7 +83,7 @@ const EN = {
   "facts.shipping": "shipping to every<br>corner of the world",
   "col.kicker": "collection",
   "col.title": "Sweaters that <em>embrace</em>",
-  "col.lead": "Every design is knitted to order — in the colour, yarn and size you choose. Click a photo to see the details.",
+  "col.lead": "I tailor every sweater individually — the design, type of yarn, colour and size.",
   "col.all": "All",
   "col.sweaters": "Sweaters",
   "col.cardigans": "Cardigans",
