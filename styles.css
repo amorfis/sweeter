@@ -111,11 +111,13 @@ h3 { font-size: 1.6rem; font-weight: 400; }
 .header.is-scrolled { border-bottom-color: var(--line); }
 .header__inner { display: flex; align-items: center; justify-content: space-between; height: 80px; gap: 24px; }
 
-.brand { display: flex; flex-direction: column; align-items: center; text-decoration: none; line-height: 1; }
+/* --logo-size drives both lines, so NATALIA TABACZKA always spans
+   exactly the width of SWEETER, whatever size the logo is shown at. */
+.brand { --logo-size: 2.5rem; display: flex; flex-direction: column; align-items: center; text-decoration: none; line-height: 1; }
 .brand__word {
   font-family: var(--logo);
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: var(--logo-size);
   letter-spacing: .03em;
   margin-right: -.03em;
 }
@@ -123,8 +125,10 @@ h3 { font-size: 1.6rem; font-weight: 400; }
   /* Calibri Light where installed (Windows, macOS with Office); Carlito is its free metric-compatible twin */
   font-family: "Calibri Light", Calibri, Carlito, sans-serif;
   font-weight: 300;
-  font-size: .72rem;
-  letter-spacing: .12em;
+  font-size: calc(var(--logo-size) * .2765);
+  letter-spacing: .05em;
+  margin-right: -.05em;
+  white-space: nowrap;
   text-transform: uppercase;
   margin-top: 5px;
   color: var(--ink-2);
@@ -407,7 +411,7 @@ h3 { font-size: 1.6rem; font-weight: 400; }
   border-bottom: 1px solid var(--line);
 }
 .brand--footer { align-items: flex-start; }
-.brand--footer .brand__word { font-size: 3.6rem; }
+.brand--footer { --logo-size: 3.6rem; }
 .brand--footer .mono { margin: 14px 0 0; }
 .footer__nav { display: flex; flex-wrap: wrap; gap: 28px; }
 .footer__nav a { font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; }
@@ -519,7 +523,7 @@ h3 { font-size: 1.6rem; font-weight: 400; }
 @media (max-width: 560px) {
   body { font-size: 16px; }
   .wrap { padding: 0 20px; }
-  .brand__word { font-size: 2.1rem; }
+  .header .brand { --logo-size: 2.1rem; }
   .facts__inner { grid-template-columns: 1fr; }
   .fact, .fact:nth-child(3) { border-left: 0; padding: 22px 0; }
   .fact + .fact { border-top: 1px solid var(--line); }
