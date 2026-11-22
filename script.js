@@ -10,48 +10,15 @@ const CONFIG = {
 };
 const POST = id => `https://www.instagram.com/sweeter_nataliatabaczka/p/${id}/`;
 
-// ---- Collection (photos & descriptions from the Instagram profile) ----------
-// kind: "sweater" | "cardigan". fibre/note are optional.
-const PIECES = [
-  { img: "ivory-leaf.jpg", post: "DUF4bWXjP5j", kind: "sweater",
-    name:   { pl: "Sweter w liście", en: "Leaf-lace sweater" },
-    colour: { pl: "ecru", en: "ecru" },
-    fibre:  { pl: "merino extra fine 17 µm z kaszmirem", en: "17-micron extra-fine merino with cashmere" },
-    note:   { pl: "„Nie miałam wcześniej w rękach nic równie cudownie miękkiego!”", en: "“I’ve never held anything so wonderfully soft.”" } },
-  { img: "red-leaf.jpg", post: "DfMbRI1iMil", kind: "sweater",
-    name:   { pl: "Sweter w liście", en: "Leaf-lace sweater" },
-    colour: { pl: "nasycona czerwień", en: "rich red" },
-    fibre:  { pl: "kaszmir i merino", en: "cashmere & merino" },
-    note:   { pl: "„Chyba najpiękniejszy sweter, który stworzyłam!”", en: "“Perhaps the most beautiful sweater I’ve ever made.”" } },
-  { img: "powder-blue-leaf.jpg", post: "DfmR93xiBTS", kind: "sweater",
-    name:   { pl: "Sweter w liście", en: "Leaf-lace sweater" },
-    colour: { pl: "poranna mgła", en: "morning mist" },
-    note:   { pl: "Wasz ulubieniec — tym razem w kolorze porannej mgły.", en: "Your favourite — this time in the colour of morning mist." } },
-  { img: "black-bobble-cardigan.jpg", post: "Df1u-IDiAhf", kind: "cardigan",
-    name:   { pl: "Bąbelek — kardigan", en: "Bąbelek cardigan" },
-    colour: { pl: "czerń", en: "black" },
-    fibre:  { pl: "alpaka suri i merino", en: "suri alpaca & merino" },
-    note:   { pl: "Dłuższa wersja, z większymi bąblami — zgodnie z życzeniem klientki.", en: "A longer version with bigger bobbles — made to a client’s wishes." } },
-  { img: "taupe-vneck.jpg", post: "Df64ZV2CDu6", kind: "sweater",
-    name:   { pl: "Sweter w liście, dekolt V", en: "Leaf-lace V-neck" },
-    colour: { pl: "taupe", en: "taupe" },
-    fibre:  { pl: "merino i kaszmir", en: "merino & cashmere" } },
-  { img: "mocha-fringe.jpg", post: "DfZOTBRiGEf", kind: "sweater",
-    name:   { pl: "Boho", en: "Boho" },
-    colour: { pl: "mokka", en: "mocha" } },
-  { img: "grey-bobble.jpg", post: "DfzSKSpCLA4", kind: "sweater",
-    name:   { pl: "Bąbelek", en: "Bąbelek (bobble)" },
-    colour: { pl: "szary", en: "grey" } },
-  { img: "taupe-leaf-cardigan.jpg", post: "Dcnp0QqCDeb", kind: "cardigan",
-    name:   { pl: "Kardigan — nowy wzór", en: "Cardigan — new design" },
-    colour: { pl: "taupe", en: "taupe" },
-    fibre:  { pl: "kid moher i jedwab", en: "kid mohair & silk" },
-    note:   { pl: "Lekki, delikatny i otulający — idealny na jesień.", en: "Light, delicate and enveloping — made for autumn." } },
-  { img: "charcoal-vneck.jpg", post: "Df9heeUCPhM", kind: "sweater",
-    name:   { pl: "Sweter w liście, dekolt V", en: "Leaf-lace V-neck" },
-    colour: { pl: "grafit", en: "graphite" },
-    note:   { pl: "Spakowany i gotowy do drogi — w świat.", en: "Packed and ready to travel — around the world." } },
-];
+// ---- Collection gallery -------------------------------------------------------
+// images/gallery/NN.jpg (large) + images/gallery/thumb/NN.jpg (grid).
+// Shown in a fresh random order on every page load.
+const GALLERY_COUNT = 46;
+const GALLERY = Array.from({ length: GALLERY_COUNT }, (_, i) => String(i + 1).padStart(2, "0") + ".jpg");
+for (let i = GALLERY.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [GALLERY[i], GALLERY[j]] = [GALLERY[j], GALLERY[i]];
+}
 
 const INSTA = [
   { img: "red-worn.jpg", post: "DfPDi6UCCby" },
@@ -81,9 +48,6 @@ const EN = {
   "col.kicker": "collection",
   "col.title": "Sweaters that <em>embrace</em>",
   "col.lead": "Every sweater that leaves my hands is unique and made with one particular person in mind. I choose the cut, colour, finish, type of yarn and size so that it fits its owner perfectly.<br>I do everything myself — from the first stitch to the last seam — so the wait can sometimes be longer, but in return everyone receives something truly special. Made with heart.",
-  "col.all": "All",
-  "col.sweaters": "Sweaters",
-  "col.cardigans": "Cardigans",
   "col.note": "Some sweaters are <strong>ready to ship</strong> — see the “Od ręki” highlight on Instagram.",
   "mat.kicker": "materials",
   "mat.title": "Only <em>noble</em> fibres",
@@ -110,20 +74,14 @@ const EN = {
   "ct.lead": "Tell me which design you love, in which colour and size — we’ll work out the rest together. Pricing and lead time are always individual.",
   "ct.dm": "Message me on Instagram",
   "foot.made": "Knitted by hand, with love ❤️",
-  "lb.colour": "Colour",
-  "lb.fibre": "Yarn",
-  "lb.price": "Price",
-  "lb.priceval": "quoted individually",
-  "lb.order": "Order this design",
-  "lb.post": "View post",
   "alt.ivory": "Ecru sweater with an openwork leaf pattern",
   "alt.portrait": "Caramel mohair sweater with balloon sleeves, worn with a gold chain necklace",
   "alt.cardigan": "Kid mohair and silk cardigan",
   "alt.worn": "Taupe cashmere and merino sweater",
 };
 const UI = {
-  pl: { view: "zobacz szczegóły", sweater: "sweter", cardigan: "kardigan", close: "Zamknij", email: "Napisz e-mail" },
-  en: { view: "view details", sweater: "sweater", cardigan: "cardigan", close: "Close", email: "Send an email" },
+  pl: { view: "powiększ", photo: "Sweter Sweeter, dziergany ręcznie przez Natalię", dialog: "Zdjęcie", prev: "Poprzednie zdjęcie", next: "Następne zdjęcie", close: "Zamknij", email: "Napisz e-mail" },
+  en: { view: "enlarge", photo: "Sweeter sweater, hand-knitted by Natalia", dialog: "Photo", prev: "Previous photo", next: "Next photo", close: "Close", email: "Send an email" },
 };
 
 let lang = "pl";
@@ -133,29 +91,15 @@ const $ = id => document.getElementById(id);
    Gallery
    ------------------------------------------------------------- */
 const gallery = $("gallery");
-let filter = "all";
 
 function renderGallery() {
-  gallery.innerHTML = PIECES.map((p, i) => `
-    <article class="piece reveal is-in ${filter !== "all" && p.kind !== filter ? "is-hidden" : ""}" data-i="${i}" tabindex="0" role="button"
-             aria-label="${p.name[lang]} — ${p.colour[lang]}">
+  gallery.innerHTML = GALLERY.map((img, i) => `
+    <article class="piece reveal is-in" data-i="${i}" tabindex="0" role="button" aria-label="${UI[lang].view}">
       <div class="piece__img" data-view="${UI[lang].view}">
-        <img src="images/${p.img}" alt="${p.name[lang]}, ${p.colour[lang]}" loading="lazy" width="512" height="640">
-      </div>
-      <div class="piece__info">
-        <h3>${p.name[lang]}</h3>
-        <p class="piece__meta">${p.colour[lang]}${p.fibre ? " · " + p.fibre[lang] : ""}</p>
+        <img src="images/gallery/thumb/${img}" alt="${UI[lang].photo}" loading="lazy" width="600" height="800">
       </div>
     </article>`).join("");
 }
-
-document.querySelectorAll(".filter").forEach(btn => btn.addEventListener("click", () => {
-  filter = btn.dataset.filter;
-  document.querySelectorAll(".filter").forEach(b => b.classList.toggle("is-active", b === btn));
-  gallery.querySelectorAll(".piece").forEach(el => {
-    el.classList.toggle("is-hidden", filter !== "all" && PIECES[+el.dataset.i].kind !== filter);
-  });
-}));
 
 /* -------------------------------------------------------------
    Lightbox
@@ -164,17 +108,13 @@ const lb = $("lightbox");
 let current = -1;
 
 function fillLightbox() {
-  const p = PIECES[current];
-  if (!p) return;
-  $("lb-img").src = `images/${p.img}`;
-  $("lb-img").alt = `${p.name[lang]}, ${p.colour[lang]}`;
-  $("lb-kind").textContent = UI[lang][p.kind];
-  $("lb-title").textContent = p.name[lang];
-  $("lb-note").textContent = p.note ? p.note[lang] : "";
-  $("lb-colour").textContent = p.colour[lang];
-  $("lb-fibre-row").hidden = !p.fibre;
-  $("lb-fibre").textContent = p.fibre ? p.fibre[lang] : "";
-  $("lb-post").href = POST(p.post);
+  const img = GALLERY[current];
+  if (!img) return;
+  $("lb-img").src = `images/gallery/${img}`;
+  $("lb-img").alt = UI[lang].photo;
+  lb.setAttribute("aria-label", UI[lang].dialog);
+  $("lb-prev").setAttribute("aria-label", UI[lang].prev);
+  $("lb-next").setAttribute("aria-label", UI[lang].next);
   $("lb-close").setAttribute("aria-label", UI[lang].close);
 }
 
@@ -183,6 +123,18 @@ function openPiece(i) {
   fillLightbox();
   lb.showModal();
 }
+
+function step(delta) {
+  current = (current + delta + GALLERY.length) % GALLERY.length;
+  fillLightbox();
+}
+
+$("lb-prev").addEventListener("click", () => step(-1));
+$("lb-next").addEventListener("click", () => step(1));
+lb.addEventListener("keydown", e => {
+  if (e.key === "ArrowLeft") { e.preventDefault(); step(-1); }
+  if (e.key === "ArrowRight") { e.preventDefault(); step(1); }
+});
 
 gallery.addEventListener("click", e => {
   const el = e.target.closest(".piece");

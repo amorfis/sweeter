@@ -87,12 +87,6 @@
           <p class="head__lead" data-i18n="col.lead">Każdy sweter, który wychodzi spod moich rąk, jest unikalny i tworzony z myślą o konkretnej osobie. Dobieram fason, kolor, wykończenie, rodzaj włóczki i rozmiar tak, by idealnie pasował do właściciela.<br>Wszystko robię sama — od pierwszego oczka po ostatni szew — dlatego czas oczekiwania bywa dłuższy, ale w zamian każdy otrzymuje coś wyjątkowego. Stworzonego z sercem.</p>
         </div>
 
-        <div class="filters reveal" role="group" aria-label="Filtr">
-          <button class="filter is-active" data-filter="all" data-i18n="col.all">Wszystkie</button>
-          <button class="filter" data-filter="sweater" data-i18n="col.sweaters">Swetry</button>
-          <button class="filter" data-filter="cardigan" data-i18n="col.cardigans">Kardigany</button>
-        </div>
-
         <div class="gallery" id="gallery"><!-- script.js --></div>
 
         <p class="gallery__note reveal" data-i18n="col.note">Część swetrów jest dostępna <strong>od ręki</strong> — zajrzyj do wyróżnionej relacji „Od ręki” na Instagramie.</p>
@@ -214,25 +208,11 @@
   </footer>
 
   <!-- ================= LIGHTBOX ================= -->
-  <dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
+  <dialog class="lightbox" id="lightbox" aria-label="Zdjęcie">
     <button class="lightbox__close" id="lb-close" aria-label="Zamknij">×</button>
-    <div class="lightbox__body">
-      <img id="lb-img" alt="">
-      <div class="lightbox__info">
-        <p class="mono" id="lb-kind"></p>
-        <h3 id="lb-title"></h3>
-        <p class="lightbox__note" id="lb-note"></p>
-        <dl class="lightbox__meta">
-          <div><dt data-i18n="lb.colour">Kolor</dt><dd id="lb-colour"></dd></div>
-          <div id="lb-fibre-row"><dt data-i18n="lb.fibre">Skład</dt><dd id="lb-fibre"></dd></div>
-          <div><dt data-i18n="lb.price">Cena</dt><dd data-i18n="lb.priceval">wycena indywidualna</dd></div>
-        </dl>
-        <div class="lightbox__ctas">
-          <a class="btn" href="https://ig.me/m/sweeter_nataliatabaczka" target="_blank" rel="noopener" data-i18n="lb.order">Zamów ten model</a>
-          <a class="link-arrow" id="lb-post" target="_blank" rel="noopener" data-i18n="lb.post">Zobacz post</a>
-        </div>
-      </div>
-    </div>
+    <button class="lightbox__nav lightbox__nav--prev" id="lb-prev" aria-label="Poprzednie zdjęcie">‹</button>
+    <img class="lightbox__img" id="lb-img" alt="">
+    <button class="lightbox__nav lightbox__nav--next" id="lb-next" aria-label="Następne zdjęcie">›</button>
   </dialog>
 
   <script src="script.js"></script>
