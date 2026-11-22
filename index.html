@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SWEETER — Luxury Handmade Knitwear · Natalia Tabaczka</title>
+  <meta name="description" content="SWEETER — luksusowe swetry dziergane ręcznie przez Natalię Tabaczkę. Wyłącznie naturalne włókna: kaszmir, merino, kid moher, alpaka. Na zamówienie, z wysyłką na cały świat.">
+  <meta property="og:title" content="SWEETER — Luxury Handmade Knitwear">
+  <meta property="og:description" content="Projektuję i dziergam swetry od 30 lat. Wyłącznie naturalne włókna wysokiej jakości.">
+  <meta property="og:image" content="images/ivory-leaf.jpg">
+  <link rel="icon" href="images/logo-avatar.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Carlito&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Courier+Prime&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header" id="top">
+    <div class="wrap header__inner">
+      <a href="#top" class="brand" aria-label="SWEETER">
+        <span class="brand__word">SWEETER</span>
+        <span class="brand__sub">Natalia Tabaczka</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#kolekcja" data-i18n="nav.collection">Kolekcja</a>
+        <a href="#materialy" data-i18n="nav.materials">Materiały</a>
+        <a href="#jak-zamowic" data-i18n="nav.order">Jak zamówić</a>
+        <a href="#o-mnie" data-i18n="nav.about">O mnie</a>
+        <a href="#kontakt" class="nav__cta" data-i18n="nav.contact">Zamów sweter</a>
+      </nav>
+
+      <div class="header__tools">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="pl" class="is-active">PL</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="wrap hero__inner">
+        <div class="hero__text">
+          <p class="mono fade" data-i18n="hero.kicker">luxury handmade knitwear</p>
+          <h1 class="fade" data-i18n="hero.title">Projektuję i&nbsp;dziergam swetry <em>od&nbsp;30&nbsp;lat.</em></h1>
+          <p class="hero__lead fade" data-i18n="hero.lead">Sweeter to miłość do rękodzieła. Wyróżniający design. Najwyższa jakość. Perfekcja wykonania.</p>
+          <div class="hero__ctas fade">
+            <a href="#kolekcja" class="btn" data-i18n="hero.cta1">Zobacz kolekcję</a>
+            <a href="#kontakt" class="link-arrow" data-i18n="hero.cta2">Zamów swój sweter</a>
+          </div>
+        </div>
+
+        <div class="hero__art">
+          <figure class="hero__img hero__img--main fade">
+            <img src="images/hero-camel-portrait.jpg" alt="Karmelowy sweter z moheru z bufiastymi rękawami, noszony ze złotym naszyjnikiem" data-i18n-alt="alt.portrait" width="1080" height="1440">
+          </figure>
+          <figure class="hero__img hero__img--side fade">
+            <img src="images/ivory-leaf.jpg" alt="Kremowy sweter z ażurowym wzorem liści" data-i18n-alt="alt.ivory" width="512" height="640">
+          </figure>
+          <p class="hero__caption mono fade" data-i18n="hero.caption">dziergane ręcznie</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FACTS ================= -->
+    <section class="facts">
+      <div class="wrap facts__inner">
+        <div class="fact reveal"><strong>30</strong><span data-i18n="facts.years">lat projektowania<br>i dziergania</span></div>
+        <div class="fact reveal"><strong>100%</strong><span data-i18n="facts.fibres">naturalnych włókien<br>wysokiej jakości</span></div>
+        <div class="fact reveal"><strong>26k+</strong><span data-i18n="facts.followers">osób obserwuje<br>na Instagramie</span></div>
+        <div class="fact reveal"><svg viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1"><circle cx="20" cy="20" r="18"/><ellipse cx="20" cy="20" rx="8" ry="18"/><path d="M2 20h36M5 11h30M5 29h30"/></svg><span data-i18n="facts.shipping">wysyłka w każdy<br>zakątek świata</span></div>
+      </div>
+    </section>
+
+    <!-- ================= COLLECTION ================= -->
+    <section class="section" id="kolekcja">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="mono" data-i18n="col.kicker">kolekcja</p>
+          <h2 data-i18n="col.title">Swetry, które <em>otulają</em></h2>
+          <p class="head__lead" data-i18n="col.lead">Każdy model dziergam na zamówienie — w kolorze, składzie i rozmiarze, które wybierzesz. Kliknij zdjęcie, aby zobaczyć szczegóły.</p>
+        </div>
+
+        <div class="filters reveal" role="group" aria-label="Filtr">
+          <button class="filter is-active" data-filter="all" data-i18n="col.all">Wszystkie</button>
+          <button class="filter" data-filter="sweater" data-i18n="col.sweaters">Swetry</button>
+          <button class="filter" data-filter="cardigan" data-i18n="col.cardigans">Kardigany</button>
+        </div>
+
+        <div class="gallery" id="gallery"><!-- script.js --></div>
+
+        <p class="gallery__note reveal" data-i18n="col.note">Część swetrów jest dostępna <strong>od ręki</strong> — zajrzyj do wyróżnionej relacji „Od ręki” na Instagramie.</p>
+      </div>
+    </section>
+
+    <!-- ================= QUOTE ================= -->
+    <section class="quote">
+      <div class="wrap quote__inner reveal">
+        <svg class="quote__mark" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V17Q0 3 14 0l2 4Q8 7 8 15h8v15zm22 0V17q0-14 14-17l2 4q-8 3-8 11h8v15z" fill="currentColor"/></svg>
+        <blockquote data-i18n="quote.text">Wierzę, że warto mieć mniej, ale wybierać świadomie. Miękkość, szlachetne składy i&nbsp;ponadczasowe fasony to coś, co nigdy nie wychodzi z&nbsp;mody.</blockquote>
+        <p class="mono">— Natalia Tabaczka</p>
+      </div>
+    </section>
+
+    <!-- ================= MATERIALS ================= -->
+    <section class="section section--tint" id="materialy">
+      <div class="wrap materials">
+        <div class="materials__img reveal">
+          <img src="images/taupe-leaf-cardigan.jpg" alt="Kardigan z kid moheru i jedwabiu" data-i18n-alt="alt.cardigan" loading="lazy" width="512" height="640">
+        </div>
+        <div class="materials__text">
+          <div class="head reveal">
+            <p class="mono" data-i18n="mat.kicker">materiały</p>
+            <h2 data-i18n="mat.title">Tylko <em>szlachetne</em> włókna</h2>
+            <p class="head__lead" data-i18n="mat.lead">Nie idę na kompromisy w składzie. Pracuję wyłącznie z naturalnymi włóknami najwyższej jakości — bo to one decydują o tym, jak sweter się nosi przez lata.</p>
+          </div>
+          <ul class="fibres">
+            <li class="reveal">
+              <h3 data-i18n="mat.f1.t">Kaszmir &amp; merino extra fine</h3>
+              <p data-i18n="mat.f1.d">Merino o grubości zaledwie 17 mikronów, wzbogacone kaszmirem. Niezrównana miękkość — idealna dla osób o wrażliwej skórze.</p>
+            </li>
+            <li class="reveal">
+              <h3 data-i18n="mat.f2.t">Kid moher &amp; jedwab</h3>
+              <p data-i18n="mat.f2.d">Lekki, delikatny i otulający. Jedwab dodaje subtelnego połysku, moher — puszystej aureoli.</p>
+            </li>
+            <li class="reveal">
+              <h3 data-i18n="mat.f3.t">Alpaka suri &amp; merino</h3>
+              <p data-i18n="mat.f3.d">Cudownie puszysta, a przy tym lekka. Przytulność, którą chce się nosić każdego dnia.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW TO ORDER ================= -->
+    <section class="section" id="jak-zamowic">
+      <div class="wrap">
+        <div class="head head--center reveal">
+          <p class="mono" data-i18n="ord.kicker">sweter na zamówienie</p>
+          <h2 data-i18n="ord.title">Jak <em>powstaje</em> Twój sweter</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__n">01</span>
+            <h3 data-i18n="ord.s1.t">Wybierz model</h3>
+            <p data-i18n="ord.s1.d">Wskaż projekt z kolekcji albo opisz sweter, o którym marzysz.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__n">02</span>
+            <h3 data-i18n="ord.s2.t">Kolor, skład, rozmiar</h3>
+            <p data-i18n="ord.s2.d">Razem dobieramy włóczkę, kolor i wymiary. Detale też — na przykład większe bąble w kardiganie Bąbelek.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__n">03</span>
+            <h3 data-i18n="ord.s3.t">Dzierganie ręczne</h3>
+            <p data-i18n="ord.s3.d">Oczko po oczku. Każdy sweter wymaga czasu, serca i mnóstwa pracy — i właśnie to w nim czuć.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__n">04</span>
+            <h3 data-i18n="ord.s4.t">Wysyłka w świat</h3>
+            <p data-i18n="ord.s4.d">Starannie zapakowany sweter wyrusza do Ciebie — w Polsce i w każdym zakątku świata.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section section--dark" id="o-mnie">
+      <div class="wrap about">
+        <div class="about__text">
+          <p class="mono reveal" data-i18n="about.kicker">poznajmy się</p>
+          <h2 class="reveal" data-i18n="about.title">Cześć, jestem <em>Natalia</em></h2>
+          <p class="about__lead reveal" data-i18n="about.p1">Od 30 lat projektuję i dziergam swetry. SWEETER to moja marka własna — każdy projekt jest autorski, a każdy sweter wychodzi spod moich rąk.</p>
+          <p class="reveal" data-i18n="about.p2">Kocham ręcznie dziergane swetry za to, że każdy może być trochę inny — dokładnie taki, jak wymarzyła go sobie jego właścicielka. Wracacie po kolejne kolory i modele, a ja niezmiennie cieszę się, że moje projekty znajdują miejsce w Waszych szafach.</p>
+          <blockquote class="about__quote reveal" data-i18n="about.quote">„Świadomość, że moje małe dzieła trafiają w coraz dalsze zakątki świata, dodaje mi skrzydeł.”</blockquote>
+        </div>
+        <div class="about__img reveal">
+          <img src="images/taupe-vneck-worn.jpg" alt="Sweter w kolorze taupe z kaszmiru i merino" data-i18n-alt="alt.worn" loading="lazy" width="512" height="640">
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INSTAGRAM ================= -->
+    <section class="section insta">
+      <div class="wrap">
+        <div class="insta__head reveal">
+          <div>
+            <p class="mono" data-i18n="ig.kicker">instagram</p>
+            <h2><a href="https://www.instagram.com/sweeter_nataliatabaczka/" target="_blank" rel="noopener">@sweeter_nataliatabaczka</a></h2>
+          </div>
+          <p data-i18n="ig.lead">Nowe projekty, swetry w drodze do klientek i opinie — w relacjach „Opinie”.</p>
+        </div>
+        <div class="insta__grid" id="insta"><!-- script.js --></div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="contact" id="kontakt">
+      <div class="wrap contact__inner reveal">
+        <p class="mono" data-i18n="ct.kicker">pytania / zamówienia</p>
+        <h2 data-i18n="ct.title">Zamów swój <em>wymarzony</em> sweter</h2>
+        <p class="contact__lead" data-i18n="ct.lead">Napisz do mnie, jaki model Ci się podoba, w jakim kolorze i rozmiarze — resztę ustalimy razem. Wycena i czas realizacji zawsze indywidualnie.</p>
+        <div class="contact__ctas">
+          <a class="btn btn--light" href="https://ig.me/m/sweeter_nataliatabaczka" target="_blank" rel="noopener" data-i18n="ct.dm">Napisz na Instagramie</a>
+          <a class="link-arrow link-arrow--light" id="contact-email" hidden></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="brand brand--footer">
+        <span class="brand__word">SWEETER</span>
+        <span class="brand__sub">Natalia Tabaczka</span>
+        <span class="mono">luxury handmade knitwear</span>
+      </div>
+      <nav class="footer__nav">
+        <a href="#kolekcja" data-i18n="nav.collection">Kolekcja</a>
+        <a href="#materialy" data-i18n="nav.materials">Materiały</a>
+        <a href="#jak-zamowic" data-i18n="nav.order">Jak zamówić</a>
+        <a href="#o-mnie" data-i18n="nav.about">O mnie</a>
+        <a href="https://www.instagram.com/sweeter_nataliatabaczka/" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+    </div>
+    <div class="wrap footer__base">
+      <span>© <span id="year"></span> SWEETER · Natalia Tabaczka</span>
+      <span data-i18n="foot.made">Dziergane ręcznie, z miłością ❤️</span>
+    </div>
+  </footer>
+
+  <!-- ================= LIGHTBOX ================= -->
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
+    <button class="lightbox__close" id="lb-close" aria-label="Zamknij">×</button>
+    <div class="lightbox__body">
+      <img id="lb-img" alt="">
+      <div class="lightbox__info">
+        <p class="mono" id="lb-kind"></p>
+        <h3 id="lb-title"></h3>
+        <p class="lightbox__note" id="lb-note"></p>
+        <dl class="lightbox__meta">
+          <div><dt data-i18n="lb.colour">Kolor</dt><dd id="lb-colour"></dd></div>
+          <div id="lb-fibre-row"><dt data-i18n="lb.fibre">Skład</dt><dd id="lb-fibre"></dd></div>
+          <div><dt data-i18n="lb.price">Cena</dt><dd data-i18n="lb.priceval">wycena indywidualna</dd></div>
+        </dl>
+        <div class="lightbox__ctas">
+          <a class="btn" href="https://ig.me/m/sweeter_nataliatabaczka" target="_blank" rel="noopener" data-i18n="lb.order">Zamów ten model</a>
+          <a class="link-arrow" id="lb-post" target="_blank" rel="noopener" data-i18n="lb.post">Zobacz post</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
