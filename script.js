@@ -77,7 +77,6 @@ const EN = {
   "hero.lead": "Sweeter is a love of handcraft. Distinctive design. The highest quality. Flawless craftsmanship.",
   "hero.cta1": "View the collection",
   "hero.cta2": "Order your sweater",
-  "hero.caption": "knitted by hand",
   "facts.years": "years of designing<br>and knitting",
   "facts.fibres": "natural fibres<br>of the highest quality",
   "facts.followers": "people follow<br>on Instagram",

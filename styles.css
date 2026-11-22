@@ -184,14 +184,6 @@ h3 { font-size: 1.6rem; font-weight: 400; }
   bottom: 0;
   border: 10px solid var(--paper);
 }
-.hero__caption {
-  position: absolute;
-  right: 0;
-  bottom: 2%;
-  margin: 0;
-  writing-mode: vertical-rl;
-  transform: translateX(22px);
-}
 @keyframes slowzoom { to { transform: scale(1.06); } }
 
 /* =============================================================
@@ -470,7 +462,6 @@ h3 { font-size: 1.6rem; font-weight: 400; }
 .hero__text .fade:nth-child(4) { animation-delay: .36s; }
 .hero__img--main.fade { animation-delay: .2s; }
 .hero__img--side.fade { animation-delay: .5s; }
-.hero__caption.fade { animation-delay: .8s; }
 @keyframes fadeUp { to { opacity: 1; transform: none; } }
 
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
@@ -537,7 +528,6 @@ h3 { font-size: 1.6rem; font-weight: 400; }
   .gallery { gap: 36px 14px; }
   .piece__info h3 { font-size: 1.25rem; }
   .piece__meta { font-size: .78rem; }
-  .hero__caption { display: none; }
   .filters { gap: 18px; }
 }
 
