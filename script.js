@@ -47,7 +47,7 @@ const EN = {
   "ord.s1.t": "Choose a design",
   "ord.s1.d": "Pick a design from the collection or describe the sweater you’ve been dreaming of.",
   "ord.s2.t": "Colour, yarn, size",
-  "ord.s2.d": "Together we choose the yarn, colour and measurements. Details too — like bigger bobbles on the Bąbelek cardigan.",
+  "ord.s2.d": "Together we choose the yarn, colour and measurements.",
   "ord.s3.t": "Knitted by hand",
   "ord.s3.d": "Stitch by stitch. Every sweater takes time, heart and a lot of work — and you can feel it.",
   "ord.s4.t": "Shipped worldwide",
