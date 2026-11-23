@@ -59,7 +59,7 @@ const EN = {
   "about.p3": "I love what I do!<br>I believe that in every stitch you can feel the warmth of hands and the passion that turns ordinary yarn into something truly special.",
   "ct.kicker": "questions / orders",
   "ct.title": "Order the sweater <em>you’ve dreamed of</em>",
-  "ct.lead": "Tell me which design you love, in which colour and size — we’ll work out the rest together. Pricing and lead time are always individual.",
+  "ct.lead": "We’ll agree on the price and estimated lead time individually, depending on the chosen design and the details of your order.",
   "ct.dm": "Message me on Instagram",
   "foot.made": "Knitted by hand, with love ❤️",
   "alt.ivory": "Ecru sweater with an openwork leaf pattern",
