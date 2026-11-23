@@ -41,7 +41,6 @@ const EN = {
   "hero.cta2": "Order your sweater",
   "facts.years": "years of designing<br>and knitting",
   "facts.fibres": "natural fibres<br>of the highest quality",
-  "facts.followers": "people follow<br>on Instagram",
   "facts.shipping": "shipping to every<br>corner of the world",
   "col.kicker": "collection",
   "col.title": "Sweaters that <em>embrace</em>",
