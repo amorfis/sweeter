@@ -13,11 +13,19 @@ const CONFIG = {
 // images/gallery/NN.jpg (large) + images/gallery/thumb/NN.jpg (grid).
 // Shown in a fresh random order on every page load.
 const GALLERY_COUNT = 47;
-const GALLERY = Array.from({ length: GALLERY_COUNT }, (_, i) => String(i + 1).padStart(2, "0") + ".jpg");
-for (let i = GALLERY.length - 1; i > 0; i--) {
-  const j = Math.floor(Math.random() * (i + 1));
-  [GALLERY[i], GALLERY[j]] = [GALLERY[j], GALLERY[i]];
+function shuffle(list) {
+  for (let i = list.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [list[i], list[j]] = [list[j], list[i]];
+  }
+  return list;
 }
+const GALLERY = shuffle(Array.from({ length: GALLERY_COUNT }, (_, i) => String(i + 1).padStart(2, "0") + ".jpg"));
+
+// ---- Opinions ticker -----------------------------------------------------------
+// opinions/NN.txt, one opinion per file. Shown in a fresh random order on every page load.
+const OPINION_COUNT = 46;
+const TICKER_SPEED = 45; // px per second
 
 // ---- English copy (Polish lives in index.html) -------------------------------
 const EN = {
@@ -61,6 +69,7 @@ const EN = {
   "ct.title": "Order the sweater <em>you’ve dreamed of</em>",
   "ct.lead": "We’ll agree on the price and estimated lead time individually, depending on the chosen design and the details of your order.",
   "ct.dm": "Message me on Instagram",
+  "op.title": "Client reviews",
   "foot.made": "Knitted by hand, with love ❤️",
   "alt.ivory": "Ecru sweater with an openwork leaf pattern",
   "alt.portrait": "Caramel mohair sweater with balloon sleeves, worn with a gold chain necklace",
@@ -173,6 +182,75 @@ document.querySelectorAll("[data-lang]").forEach(b => b.addEventListener("click"
 let saved = null;
 try { saved = localStorage.getItem("sweeter-lang"); } catch (_) {}
 setLang(saved === "en" ? "en" : "pl");
+
+/* -------------------------------------------------------------
+   Opinions ticker
+   Only the opinions currently on screen are in the DOM: new ones are
+   appended on the right, and ones that have scrolled off the left are removed.
+   ------------------------------------------------------------- */
+async function startOpinions() {
+  const track = $("opinions");
+  const section = track.closest(".opinions");
+  const files = Array.from({ length: OPINION_COUNT }, (_, i) => `opinions/${String(i + 1).padStart(2, "0")}.txt`);
+  const texts = await Promise.all(files.map(f =>
+    fetch(f).then(r => (r.ok ? r.text() : "")).catch(() => "")));
+  const opinions = shuffle(texts.map(t => t.trim()).filter(Boolean));
+  if (!opinions.length) return;
+
+  const makeItem = text => {
+    const p = document.createElement("p");
+    p.className = "opinion";
+    p.textContent = text;
+    return p;
+  };
+  section.hidden = false;
+
+  // Reduced motion: no movement, the strip can be scrolled sideways instead.
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    section.classList.add("is-static");
+    opinions.forEach(t => track.append(makeItem(t)));
+    return;
+  }
+
+  const viewport = track.parentElement;
+  let next = 0;
+  let offset = 0;
+  let last = 0;
+  let paused = false;
+  let onScreen = true;
+
+  const fill = () => {
+    while (track.scrollWidth - offset < viewport.clientWidth + 400) {
+      track.append(makeItem(opinions[next]));
+      next = (next + 1) % opinions.length;
+    }
+  };
+
+  const frame = now => {
+    const dt = last ? Math.min(now - last, 1000) / 1000 : 0; // cap avoids a jump after the tab was hidden
+    last = now;
+    if (!paused && onScreen) {
+      offset += TICKER_SPEED * dt;
+      let first = track.firstElementChild;
+      while (first && offset >= first.offsetWidth) {
+        offset -= first.offsetWidth;
+        first.remove();
+        first = track.firstElementChild;
+      }
+      fill();
+      track.style.transform = `translateX(${-offset}px)`;
+    }
+    requestAnimationFrame(frame);
+  };
+
+  section.addEventListener("mouseenter", () => { paused = true; });
+  section.addEventListener("mouseleave", () => { paused = false; });
+  new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; }).observe(section);
+
+  fill();
+  requestAnimationFrame(frame);
+}
+startOpinions();
 
 /* -------------------------------------------------------------
    Header, menu, reveal-on-scroll
