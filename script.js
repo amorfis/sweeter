@@ -8,7 +8,6 @@ const CONFIG = {
   dm: "https://ig.me/m/sweeter_nataliatabaczka",
   email: "",            // optional, e.g. "kontakt@sweeter.pl" — shows an extra contact link when set
 };
-const POST = id => `https://www.instagram.com/sweeter_nataliatabaczka/p/${id}/`;
 
 // ---- Collection gallery -------------------------------------------------------
 // images/gallery/NN.jpg (large) + images/gallery/thumb/NN.jpg (grid).
@@ -19,15 +18,6 @@ for (let i = GALLERY.length - 1; i > 0; i--) {
   const j = Math.floor(Math.random() * (i + 1));
   [GALLERY[i], GALLERY[j]] = [GALLERY[j], GALLERY[i]];
 }
-
-const INSTA = [
-  { img: "red-worn.jpg", post: "DfPDi6UCCby" },
-  { img: "taupe-vneck-worn.jpg", post: "Df_6aHpiMKe" },
-  { img: "black-bobble-cardigan.jpg", post: "Df1u-IDiAhf" },
-  { img: "ivory-leaf.jpg", post: "DUF4bWXjP5j" },
-  { img: "mocha-fringe.jpg", post: "DfZOTBRiGEf" },
-  { img: "powder-blue-leaf.jpg", post: "DfmR93xiBTS" },
-];
 
 // ---- English copy (Polish lives in index.html) -------------------------------
 const EN = {
@@ -67,8 +57,6 @@ const EN = {
   "about.p1": "I’ve been knitting since I was eight — a passion that has been with me since childhood and, over time, became my way of life.",
   "about.p2": "Today I run my own business, knitting sweaters to order. It’s my only source of income, but also a source of immense joy and satisfaction.",
   "about.p3": "I love what I do!<br>I believe that in every stitch you can feel the warmth of hands and the passion that turns ordinary yarn into something truly special.",
-  "ig.kicker": "instagram",
-  "ig.lead": "New designs, sweaters on their way to clients, and reviews — in the “Opinie” highlights.",
   "ct.kicker": "questions / orders",
   "ct.title": "Order the sweater <em>you’ve dreamed of</em>",
   "ct.lead": "Tell me which design you love, in which colour and size — we’ll work out the rest together. Pricing and lead time are always individual.",
@@ -146,14 +134,6 @@ gallery.addEventListener("keydown", e => {
 });
 $("lb-close").addEventListener("click", () => lb.close());
 lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
-
-/* -------------------------------------------------------------
-   Instagram strip
-   ------------------------------------------------------------- */
-$("insta").innerHTML = INSTA.map(p => `
-  <a href="${POST(p.post)}" target="_blank" rel="noopener" aria-label="Instagram post">
-    <img src="images/${p.img}" alt="" loading="lazy" width="512" height="640">
-  </a>`).join("");
 
 /* -------------------------------------------------------------
    Language switch (PL text is read from the HTML, EN from the dictionary)

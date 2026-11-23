@@ -319,19 +319,6 @@ h3 { font-size: 1.6rem; font-weight: 400; }
 .about__img img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 
 /* =============================================================
-   INSTAGRAM
-   ============================================================= */
-.insta__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; margin-bottom: 40px; }
-.insta__head h2 { font-size: clamp(1.8rem, 3.6vw, 2.8rem); margin: 0; }
-.insta__head h2 a { text-decoration: none; }
-.insta__head h2 a:hover { font-style: italic; }
-.insta__head > p { max-width: 24em; color: var(--ink-2); margin: 0; }
-.insta__grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
-.insta__grid a { position: relative; overflow: hidden; display: block; background: var(--ecru); }
-.insta__grid img { width: 100%; aspect-ratio: 1; object-fit: cover; transition: transform .8s var(--ease), opacity .4s; }
-.insta__grid a:hover img { transform: scale(1.06); opacity: .85; }
-
-/* =============================================================
    CONTACT
    ============================================================= */
 .contact {
@@ -472,7 +459,6 @@ h3 { font-size: 1.6rem; font-weight: 400; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .piece:nth-child(3n+2), .piece.reveal.is-in:nth-child(3n+2) { transform: none; }
   .piece:nth-child(2n), .piece.reveal.is-in:nth-child(2n) { transform: translateY(40px); }
-  .insta__grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 560px) {
